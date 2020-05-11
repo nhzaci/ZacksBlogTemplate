@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen items-stretch">
+  <div class="min-h-screen bg-teal-200 items-stretch">
     <NavBar />
     <nuxt />
   </div>

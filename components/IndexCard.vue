@@ -3,7 +3,7 @@
 
         <!-- Year -->
         <div class="shadow-md p-2 bg-blue-600">
-            <h1 class="font-semibold font-xl shadow-sm text-white hover:text-orange-400">{{ year }}</h1>
+            <h1 class="font-semibold font-xl shadow-sm text-white hover:text-orange-400 tracking-wider">{{ year }}</h1>
         </div>
 
         <!-- List for each month -->
