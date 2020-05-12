@@ -3,7 +3,7 @@
 
     <div class="flex lg:mx-64 mx-5 mt-5">
       <!-- Left side of the page -->
-      <div class="w-full lg:w-3/4 bg-green-300 space-y-5 p-5 shadow-lg">
+      <div class="w-full lg:w-3/4 bg-orange-300 space-y-5 p-5 shadow-lg">
         <PostCard 
           v-for="blogPost in posts" 
           :key="blogPost.id" 
@@ -18,7 +18,7 @@
       <span class="p-5"></span>
 
       <!-- Right side of the page -->
-      <div class="hidden lg:block w-1/4 bg-orange-300 shadow-lg space-y-5 p-5">
+      <div class="hidden lg:block w-1/4 bg-yellow-300 shadow-lg space-y-5 p-5">
         <IndexCard year=2020 month='Dec' @filterMonth="filterMonthYear(arguments)"/>
         <IndexCard year=2019 month='Dec'/>
       </div>

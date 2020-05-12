@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-col shadow-md p-5 bg-blue-700 text-gray-400">
+    <div class="flex-col shadow-md p-5 bg-blue-700 text-gray-400 hover:bg-blue-600 cursor-pointer">
         <div class="shadow-md px-2 py-1 bg-blue-600">
            <h1 class="font-semibold text-2xl text-white">{{ capFirstWord(title) }}</h1>
         </div>
