@@ -1,17 +1,24 @@
 <template>
   <div class="w-screen">
 
-    <!-- Remainder of the page -->
     <div class="flex lg:mx-64 mx-5 mt-5">
       <!-- Left side of the page -->
       <div class="w-full lg:w-3/4 bg-green-300 space-y-5 p-5 shadow-lg">
-        <PostCard v-for="post in posts" :key="post.id" :title="post.title" :text="post.body"/>
+        <PostCard 
+          v-for="blogPost in posts" 
+          :key="blogPost.id" 
+          :title="blogPost.title" 
+          :post="blogPost.post"
+          :created="blogPost.created"
+          :tags="blogPost.tags"
+          :imgurl="blogPost.imgurl"
+        />
       </div>
       
       <span class="p-5"></span>
 
       <!-- Right side of the page -->
-      <div class="hidden lg:block w-1/4 bg-orange-400 shadow-lg space-y-5 p-5">
+      <div class="hidden lg:block w-1/4 bg-orange-300 shadow-lg space-y-5 p-5">
         <IndexCard year=2020 month='Dec' @filterMonth="filterMonthYear(arguments)"/>
         <IndexCard year=2019 month='Dec'/>
       </div>
@@ -23,7 +30,7 @@
 <script>
 import PostCard from '@/components/PostCard';
 import IndexCard from '@/components/IndexCard';
-import postData from '@/assets/data/data.json';
+import axios from 'axios';
 
 export default {
   methods: {
@@ -35,12 +42,18 @@ export default {
   },
   data() {
     return {
-      posts: postData
+      posts: []
     }
   },
   components: {
     PostCard,
     IndexCard
+  },
+  async created() {
+    this.posts = await axios
+      .get('http://127.0.0.1:8000/posts/')
+      .then(response => response.data)
+      .catch(error => console.log(error))
   }
 }
 </script>
